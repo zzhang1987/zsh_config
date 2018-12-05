@@ -10,3 +10,6 @@
 [submodule "zsh-git-prompt"]
 	path = zsh-git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt
+[submodule "zsh-completions"]
+	path = zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
