@@ -1,0 +1,12 @@
+[submodule "z"]
+	path = z
+	url = ./z
+[submodule "zpm"]
+	path = zpm
+	url = ./zpm
+[submodule "zsh-autosuggestions"]
+	path = zsh-autosuggestions
+	url = ./zsh-autosuggestions
+[submodule "zsh-git-prompt"]
+	path = zsh-git-prompt
+	url = ./zsh-git-prompt
