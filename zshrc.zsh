@@ -19,7 +19,7 @@ zpm load zpm-zsh/zsh-command-not-found
 source "${HOME}/.config/zshconfig/zgen/zgen.zsh"
 
 PROMPT_TITLE='$USER@$HOST:$PWD'
-export TERM=rxvt-unicode-256color
+# export TERM=rxvt-unicode-256color
 
 ### keybindings
 bindkey '^[[1;5C' vi-forward-blank-word
