@@ -7,7 +7,8 @@ fpath=(~/.config/zshconfig/zsh-completions/src $fpath)
 
 zpm load mafredri/zsh-async  
 zpm load zpm-zsh/ls
-zpm load zpm-zsh/diLS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
+zpm load zpm-zsh/dircolors 
+# LS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
 # LS_COMMON="$LS_COMMON -I ntuser.ini"
 
 # test -n "$LS_COMMON" &&
