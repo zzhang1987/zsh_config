@@ -24,7 +24,6 @@ PROMPT_TITLE='$USER@$HOST:$PWD'
 ### keybindings
 bindkey '^[[1;5C' vi-forward-blank-word
 bindkey '^[[1;5D' vi-backward-blank-word
-
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
@@ -42,3 +41,13 @@ if [ -f "$HOME/.profile" ] ; then
 fi
 
 umask 077
+# Emacs tramp fix
+if [[ "$TERM" == "dumb" ]]
+then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  unfunction precmd
+  unfunction preexec
+  PS1='$ '
+fi
