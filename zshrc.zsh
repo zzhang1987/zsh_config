@@ -4,11 +4,14 @@ source ~/.config/zshconfig/z/z.sh
 source ~/.config/zshconfig/zpm/zpm.zsh 
 
 fpath=(~/.config/zshconfig/zsh-completions/src $fpath)
-fpath=(~/.config/zfunctions $fpath)
 
 zpm load mafredri/zsh-async  
 zpm load zpm-zsh/ls
-zpm load zpm-zsh/dircolors-material
+zpm load zpm-zsh/diLS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
+# LS_COMMON="$LS_COMMON -I ntuser.ini"
+
+# test -n "$LS_COMMON" &&
+# alias ls="ls $LS_COMMON"rcolors-material
 zpm load zpm-zsh/title
 zpm load zpm-zsh/ssh
 zpm load zsh-users/zsh-syntax-highlighting
@@ -27,11 +30,11 @@ bindkey '^[[1;5D' vi-backward-blank-word
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
-LS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
-LS_COMMON="$LS_COMMON -I ntuser.ini"
+# LS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
+# LS_COMMON="$LS_COMMON -I ntuser.ini"
 
-test -n "$LS_COMMON" &&
-alias ls="ls $LS_COMMON"
+# test -n "$LS_COMMON" &&
+# alias ls="ls $LS_COMMON"
 # POWERLEVEL9K_MODE='awesome-fontconfig'
 # source ~/.config/zshconfig/powerlevel9k/powerlevel9k.zsh-theme 
 zgen load denysdovhan/spaceship-prompt spaceship
