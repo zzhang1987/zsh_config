@@ -18,7 +18,9 @@ zpm load zpm-zsh/ssh
 zpm load zsh-users/zsh-syntax-highlighting
 zpm load paraqles/zsh-plugin-ssh
 zpm load zpm-zsh/colors
-zpm load zpm-zsh/zsh-command-not-found
+# zpm load zpm-zsh/zsh-command-not-found
+
+source ~/.config/zshconfig/3rd/command-not-found.sh
 
 source "${HOME}/.config/zshconfig/zgen/zgen.zsh"
 
