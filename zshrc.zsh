@@ -28,10 +28,16 @@ PROMPT_TITLE='$USER@$HOST:$PWD'
 # export TERM=rxvt-unicode-256color
 
 ### keybindings
-bindkey '^[[1;5C' vi-forward-blank-word
-bindkey '^[[1;5D' vi-backward-blank-word
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
+
+# bindkey '^[[1;5C' vi-forward-blank-word
+# bindkey '^[[1;5D' vi-backward-blank-word
+
+if [[ "${terminfo[khome]}" != "" ]]; then
+    bindkey "${terminfo[khome]}" beginning-of-line
+fi
+if [[ "${terminfo[khome]}" != "" ]]; then 
+    bindkey "${terminfo[kend]}" end-of-line
+fi 
 
 # LS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
 # LS_COMMON="$LS_COMMON -I ntuser.ini"
@@ -46,14 +52,12 @@ if [ -f "$HOME/.profile" ] ; then
     source $HOME/.profile
 fi
 
-umask 077
+umask 022
 # Emacs tramp fix
 if [[ "$TERM" == "dumb" ]]
 then
   unsetopt zle
   unsetopt prompt_cr
   unsetopt prompt_subst
-  unfunction precmd
-  unfunction preexec
   PS1='$ '
 fi
