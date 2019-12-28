@@ -4,10 +4,15 @@ source ~/.config/zshconfig/z/z.sh
 source ~/.config/zshconfig/zpm/zpm.zsh 
 
 fpath=(~/.config/zshconfig/zsh-completions/src $fpath)
+fpath=(~/.config/zfunctions $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
+PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 
 zpm load mafredri/zsh-async  
 zpm load zpm-zsh/ls
-zpm load zpm-zsh/diLS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
+zpm load zpm-zsh/dircolors-material
+# LS_COMMON="$LS_COMMON -I NTUSER.DAT\* -I ntuser.dat\*"
 # LS_COMMON="$LS_COMMON -I ntuser.ini"
 
 # test -n "$LS_COMMON" &&
@@ -17,7 +22,7 @@ zpm load zpm-zsh/ssh
 zpm load zsh-users/zsh-syntax-highlighting
 zpm load paraqles/zsh-plugin-ssh
 zpm load zpm-zsh/colors
-zpm load zpm-zsh/zsh-command-not-found
+# zpm load zpm-zsh/zsh-command-not-found
 
 source "${HOME}/.config/zshconfig/zgen/zgen.zsh"
 
