@@ -1,13 +1,21 @@
 source ~/.config/zshconfig/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zshconfig/z/z.sh
 # source ~/.config/zshconfig/ls/ls.plugin.zsh
-source ~/.config/zshconfig/zpm/zpm.zsh 
+# source ~/.config/zshconfig/zpm/zpm.zsh 
+if [[ ! -f ~/.zpm/zpm.zsh ]]; then
+  git clone https://github.com/zpm-zsh/zpm ~/.zpm
+fi
+source ~/.zpm/zpm.zsh
 
 fpath=(~/.config/zshconfig/zsh-completions/src $fpath)
 fpath=(~/.config/zfunctions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+### Core
+zpm if ssh     \
+  zpm-zsh/tmux \
 
 zpm load mafredri/zsh-async  
 zpm load zpm-zsh/ls
