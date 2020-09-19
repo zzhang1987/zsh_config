@@ -1,14 +1,14 @@
-source ~/.config/zshconfig/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zshconfig/z/z.sh
-# source ~/.config/zshconfig/ls/ls.plugin.zsh
-# source ~/.config/zshconfig/zpm/zpm.zsh 
-if [[ ! -f ~/.zpm/zpm.zsh ]]; then
-  git clone https://github.com/zpm-zsh/zpm ~/.zpm
+source ${XDG_CONFIG_HOME}/zshconfig/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ${XDG_CONFIG_HOME}/zshconfig/z/z.sh
+# source ${XDG_CONFIG_HOME}/zshconfig/ls/ls.plugin.zsh
+# source ${XDG_CONFIG_HOME}/zshconfig/zpm/zpm.zsh 
+if [[ ! -f ${XDG_CONFIG_HOME}/.zpm/zpm.zsh ]]; then
+  git clone https://github.com/zpm-zsh/zpm ${XDG_CONFIG_HOME}/.zpm
 fi
-source ~/.zpm/zpm.zsh
+source ${XDG_CONFIG_HOME}/.zpm/zpm.zsh
 
-fpath=(~/.config/zshconfig/zsh-completions/src $fpath)
-fpath=(~/.config/zfunctions $fpath)
+fpath=(${XDG_CONFIG_HOME}/zshconfig/zsh-completions/src $fpath)
+fpath=(${XDG_CONFIG_HOME}/zfunctions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -71,9 +71,8 @@ zpm                           \
 
   
 
-source ~/.config/zshconfig/3rd/command-not-found.sh
-
-source "${HOME}/.config/zshconfig/zgen/zgen.zsh"
+source ${XDG_CONFIG_HOME}/zshconfig/3rd/command-not-found.sh
+source ${XDG_CONFIG_HOME}/zshconfig/zgen/zgen.zsh
 
 PROMPT_TITLE='$USER@$HOST:$PWD'
 # export TERM=rxvt-unicode-256color
@@ -96,7 +95,7 @@ fi
 # test -n "$LS_COMMON" &&
 # alias ls="ls $LS_COMMON"
 # POWERLEVEL9K_MODE='awesome-fontconfig'
-# source ~/.config/zshconfig/powerlevel9k/powerlevel9k.zsh-theme 
+# source ${XDG_CONFIG_HOME}/zshconfig/powerlevel9k/powerlevel9k.zsh-theme 
 zgen load denysdovhan/spaceship-prompt spaceship
 
 if [ -f "$HOME/.profile" ] ; then
